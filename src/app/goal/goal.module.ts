@@ -8,18 +8,25 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     
-    {
-      path: 'list',
-      component: ListComponent,
-    },
-    {
-      path: 'timeline',
-      component: TimelineComponent,
-    },
+    
     {
         path:'',
-        redirectTo:'timeline',
-        pathMatch:'full'
+        component:BaseComponent,
+        children:[
+            {
+                path: 'list',
+                component: ListComponent,
+              },
+              {
+                path: 'timeline',
+                component: TimelineComponent,
+              },
+              {
+                path: '',
+                redirectTo:'timeline',
+                pathMatch:'full'
+              },
+        ]
     }
   ];
 
