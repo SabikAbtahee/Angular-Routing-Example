@@ -12,4 +12,11 @@ export class BaseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onOutletLoaded(component){
+      setTimeout(()=>{
+        component.node='somevalue';
+
+      },5000)
+  }
+
 }
